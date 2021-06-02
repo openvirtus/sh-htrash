@@ -61,7 +61,7 @@ htrash_code_show_variables() {
     printf '%-20s: %s\n' HTRASH_CODE_FILE "${HTRASH_CODE_FILE}"
 }
 htrash_code_calc_variables() {
-    HTRASH_CODE_FILE="${HOME}/Documents/trash-code.txt"
+    HTRASH_CODE_FILE="${HTRASH_CODE_FILE:-${HOME}/Documents/trash-code.txt}"
 }
 
 
