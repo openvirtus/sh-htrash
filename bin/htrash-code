@@ -1,5 +1,8 @@
 #!/bin/sh -e
 #L:
+#L:  This software is free to use and modify, but not free to maintain.
+#L:
+#l:  Donate bitcoin: 1C1ZzDje7vHhF23mxqfcACE8QD4nqxywiV
 #l:  Copyright (c) 2018 Openvirtus.com, http://openvirtus.com
 #L:
 #L:  Permission is hereby granted, free of charge, to any person obtaining
@@ -21,6 +24,8 @@
 #L:  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 #L:  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #L:
+#r: ## HTRASH-CODE
+#r:
 #h: Usage: $0 FILES...
 #h:
 #h: This script helps trashing out code to a single file for an hipotetical
@@ -29,6 +34,7 @@
 #h:
 #h: -v : Show honored environment variables.
 #h: -l : Open trashed code with less.
+#r:
 htrash_code() {
     ## Parse command line arguments.
     local OPTIND optopt= ops=

@@ -1,6 +1,9 @@
 #!/bin/sh -e
 #L:
-#l:  Copyright (c) 2018 Openvirtus.com, http://openvirtus.com.
+#L:  This software is free to use and modify, but not free to maintain.
+#L:
+#l:  Donate bitcoin: 1C1ZzDje7vHhF23mxqfcACE8QD4nqxywiV
+#l:  Copyright (c) 2018 Openvirtus.com, http://openvirtus.com
 #L:
 #L:  Permission is hereby granted, free of charge, to any person obtaining
 #L:  a copy of this software and associated documentation files (the
@@ -21,12 +24,13 @@
 #L:  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 #L:  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #L:
+#r: ## HTRASH
+#r:
 #h: Usage: $0 FILES...
 #h:
 #h: -v : Show configuration.
 #h: -l : List saved files.
-#::
-#a: [UTIL] A simple file trash can for shell.
+#r:
 . hutil
 htrash() {
     ## Parse command line arguments.
