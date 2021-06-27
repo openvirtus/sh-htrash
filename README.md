@@ -5,6 +5,7 @@
     -v : Show configuration.
     -l : List saved files.
 
+
 ## HTRASH-CODE
 
     Usage: htrash-code FILES...
@@ -15,6 +16,7 @@
     
     -v : Show honored environment variables.
     -l : Open trashed code with less.
+
 
 ## DONATIONS
 <ul>
