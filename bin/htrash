@@ -31,7 +31,6 @@
 #h: -v : Show configuration.
 #h: -l : List saved files.
 #r:
-. hutil
 htrash() {
     ## Parse command line arguments.
     local OPTIND optopt= ops=
@@ -58,12 +57,10 @@ htrash_save() {
     local arg=
     for fr in "$@";do
         local to="${HTRASH_DIR}/`date '+%Y-%m-%d'`-`basename "${fr}"`"
-        hutil info ".-- ${fr}"
-        hutil info "'-> ${to}"
-        if hutil yn "Save?" y;then
-            mkdir -p "${HTRASH_DIR}"
-            mv "${fr}" "${to}"
-        fi
+        echo "${LOGNAME}: .-- ${fr}" >&2
+        echo "${LOGNAME}: '-> ${to}" >&2
+        mkdir -p "${HTRASH_DIR}"
+        mv "${fr}" "${to}"
     done
 }
 
@@ -71,10 +68,13 @@ htrash_save() {
 
 ## -----------------------------------------------------------------------------
 htrash_calc_variables
-if test @"`basename "$0"`" = @"htrash";then
+LOGNAME="`basename "$0"`"
+if test @"${LOGNAME}" = @"htrash";then
     if test -n "$1";then
         htrash "$@"
     else
-        hutil help
+        sed -n 's/^ *#h: \{0,1\}//p' "$0" | sed "s|\\\$0|`basename $0`|g"
+        echo ""
+        sed -n 's/^ *#l: \{0,2\}//p' "$0"
     fi
 fi
